@@ -1,0 +1,6 @@
+C:\Users\admin\Documents\Visual Studio 2015\Projects\volcontrolmod\dbgmod\bin\Release\volcontrolmod.dll
+C:\Users\admin\Documents\Visual Studio 2015\Projects\volcontrolmod\dbgmod\bin\Release\volcontrolmod.pdb
+C:\Users\admin\Documents\Visual Studio 2015\Projects\volcontrolmod\dbgmod\obj\Release\volcontrolmod.dll
+C:\Users\admin\Documents\Visual Studio 2015\Projects\volcontrolmod\dbgmod\obj\Release\volcontrolmod.pdb
+C:\Users\admin\Documents\Visual Studio 2015\Projects\volcontrolmod\dbgmod\bin\Release\Microsoft.Xna.Framework.Xact.dll
+C:\Users\admin\Documents\Visual Studio 2015\Projects\volcontrolmod\dbgmod\bin\Release\Microsoft.Xna.Framework.Xact.xml
