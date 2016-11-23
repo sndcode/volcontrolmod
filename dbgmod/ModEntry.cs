@@ -20,8 +20,9 @@ namespace volcontrolmod
 
     class ModConfig
     {
-        public   bool skipintro { get; set; } = true;
-        public   bool playsound { get; set; } = true;
+        public bool mutemusic { get; set; } = true;
+        public bool muteambient { get; set; } = true;
+        public bool mutefootsteps { get; set; } = true;
     }
 
     public class ModEntry : Mod
@@ -30,6 +31,10 @@ namespace volcontrolmod
         internal static ModConfig Config;
         public string modversion = "0.0.1";
         public bool audiotogglestate;
+
+        public float stored_ambient_vol;
+        public float stored_sound_vol;
+        public float stored_music_vol;
 
         private void HandleDebugHelp(object sender, EventArgsCommand e)
         {
@@ -40,8 +45,15 @@ namespace volcontrolmod
 
             this.Monitor.Log("=========================================", LogLevel.Info);
             this.Monitor.Log("How to use the volcontrolmod version " + modversion , LogLevel.Info);
-            this.Monitor.Log("Get ingame and press your hotkey once to turn down or up the master game volume for 10 percent.", LogLevel.Info);
+            this.Monitor.Log("Get ingame and press your hotkey to toggle sounds on or off.", LogLevel.Info);
             this.Monitor.Log("=========================================", LogLevel.Info);
+        }
+
+        private void backupVolume()
+        {
+            
+
+            
         }
 
         private void enableSounds()
@@ -50,8 +62,11 @@ namespace volcontrolmod
             
             try
             {
-                Game1.musicPlayerVolume = Math.Max(0f, Game1.musicPlayerVolume - 0.01f);
-                Game1.ambientPlayerVolume = Math.Max(0f, Game1.ambientPlayerVolume - 0.01f);
+                //Game1.musicPlayerVolume = Math.Max(0f, Game1.musicPlayerVolume - 0.01f);
+                //Game1.ambientPlayerVolume = Math.Max(0f, Game1.ambientPlayerVolume - 0.01f);
+                Game1.musicCategory.SetVolume(5f);
+                Game1.ambientCategory.SetVolume(5f);
+                Game1.soundCategory.SetVolume(5f);
 
                 Game1.currentSong.Resume();
             }
@@ -70,7 +85,7 @@ namespace volcontrolmod
             {
                 Game1.musicCategory.SetVolume(0f);
                 Game1.ambientCategory.SetVolume(0f);
-
+                Game1.soundCategory.SetVolume(0f);
                 Game1.currentSong.Pause();
             }
             catch (Exception e)
@@ -102,7 +117,7 @@ namespace volcontrolmod
 
         public override void Entry(IModHelper helper)
         {
-            Command.RegisterCommand("help_volcontrolmod", "Shows volcontrolmod  infos | volcontrolmod").CommandFired += this.HandleDebugHelp;
+            Command.RegisterCommand("help_vctrl", "Shows volcontrolmod  infos | volcontrolmod").CommandFired += this.HandleDebugHelp;
             Config = helper.ReadConfig<ModConfig>();
             ControlEvents.KeyPressed += this.ReceiveKeyPress;
         }
