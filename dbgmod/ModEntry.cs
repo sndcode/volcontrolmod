@@ -32,10 +32,6 @@ namespace volcontrolmod
         public string modversion = "0.0.1";
         public bool audiotogglestate;
 
-        public float stored_ambient_vol;
-        public float stored_sound_vol;
-        public float stored_music_vol;
-
         private void HandleDebugHelp(object sender, EventArgsCommand e)
         {
             ///
@@ -47,13 +43,6 @@ namespace volcontrolmod
             this.Monitor.Log("How to use the volcontrolmod version " + modversion , LogLevel.Info);
             this.Monitor.Log("Get ingame and press your hotkey to toggle sounds on or off.", LogLevel.Info);
             this.Monitor.Log("=========================================", LogLevel.Info);
-        }
-
-        private void backupVolume()
-        {
-            
-
-            
         }
 
         private void enableSounds()

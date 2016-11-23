@@ -10,3 +10,4 @@ D:\gits\volcontrolmod\volcontrolmod\dbgmod\bin\Release\Microsoft.Xna.Framework.X
 D:\gits\volcontrolmod\volcontrolmod\dbgmod\bin\Release\Microsoft.Xna.Framework.Xact.xml
 D:\gits\volcontrolmod\volcontrolmod\dbgmod\obj\Release\volcontrolmod.dll
 D:\gits\volcontrolmod\volcontrolmod\dbgmod\obj\Release\volcontrolmod.pdb
+D:\gits\volcontrolmod\volcontrolmod\dbgmod\obj\Release\volcontrolmod.csprojResolveAssemblyReference.cache
