@@ -56,7 +56,12 @@ namespace volcontrolmod
                 Game1.musicCategory.SetVolume(5f);
                 Game1.ambientCategory.SetVolume(5f);
                 Game1.soundCategory.SetVolume(5f);
-
+                //
+                Game1.options = new Options();
+                Game1.options.musicVolumeLevel = 1f;
+                Game1.options.soundVolumeLevel = 1f;
+                Game1.options.ambientVolumeLevel = 1f;
+                //
                 Game1.currentSong.Resume();
             }
             catch (Exception e)
@@ -72,6 +77,11 @@ namespace volcontrolmod
             
             try
             {
+                Game1.options = new Options();
+                Game1.options.musicVolumeLevel = 0f;
+                Game1.options.soundVolumeLevel = 0f;
+                Game1.options.ambientVolumeLevel = 0f;
+                //
                 Game1.musicCategory.SetVolume(0f);
                 Game1.ambientCategory.SetVolume(0f);
                 Game1.soundCategory.SetVolume(0f);
